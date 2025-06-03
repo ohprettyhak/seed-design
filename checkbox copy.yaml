@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=./schema.json
+# parts: root, label
+kind: ComponentSpec
+metadata:
+  id: checkbox
+  name: Checkbox
+data:
+  definitions:
+    base:
+      enabled:
+        label:
+          color: $color.fg.neutral
+        root:
+          gap: $dimension.x2
+
+    weight=default:
+      enabled:
+        label:
+          fontWeight: $font-weight.regular
+    weight=stronger:
+      enabled:
+        label:
+          fontWeight: $font-weight.bold
+
+    variant=square:
+      disabled:
+        label:
+          color: $color.fg.disabled
+      disabled,selected:
+        label:
+          color: $color.fg.disabled
+
+    variant=ghost:
+      disabled:
+        label:
+          color: $color.fg.disabled
+      disabled,selected:
+        label:
+          color: $color.fg.disabled
+
+    size=medium:
+      enabled:
+        root:
+          minHeight: $dimension.x8
+        label:
+          fontSize: $font-size.t4
+          lineHeight: $line-height.t4
+
+    size=large:
+      enabled:
+        root:
+          minHeight: $dimension.x9
+        label:
+          fontSize: $font-size.t5
+          lineHeight: $line-height.t5
