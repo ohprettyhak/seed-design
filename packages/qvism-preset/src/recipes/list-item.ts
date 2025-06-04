@@ -1,6 +1,6 @@
 import { defineSlotRecipe } from "../utils/define";
 import { onlyIcon } from "../utils/icon";
-import { disabled, pressed, pseudo } from "../utils/pseudo";
+import { active, disabled, pseudo } from "../utils/pseudo";
 import { listItem as vars } from "../vars/component";
 
 // const prefixIconVerticalAdjustMargin = `(${vars.base.enabled.root.minHeight} - ${vars.base.enabled.prefixIcon.size}) * 0.5 - ${vars.base.enabled.root.paddingY}`;
@@ -17,6 +17,7 @@ const listItem = defineSlotRecipe({
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
 
+      position: "relative",
       display: "flex",
       width: "100%",
 
@@ -25,16 +26,10 @@ const listItem = defineSlotRecipe({
 
       "--seed-box-align-items": "center",
       alignItems: "var(--seed-box-align-items)",
-
-      [pseudo(pressed)]: {
-        color: vars.base.pressed.root.color,
-      },
-
-      [pseudo(":is(button)")]: {
-        cursor: "pointer",
-      },
     },
     prefix: {
+      display: "inline-flex",
+      alignItems: "center",
       flexShrink: 0,
 
       "--seed-box-padding-right": vars.base.enabled.prefix.paddingRight,
@@ -51,6 +46,8 @@ const listItem = defineSlotRecipe({
       alignItems: "center",
       flexShrink: 0,
 
+      "--seed-box-position": "initial",
+      position: "var(--seed-box-position)",
       "--seed-box-gap": vars.base.enabled.suffix.gap,
       gap: "var(--seed-box-gap)",
 
@@ -78,6 +75,25 @@ const listItem = defineSlotRecipe({
       gap: "var(--seed-box-gap)",
       "--seed-box-padding-right": vars.base.enabled.content.paddingRight,
       paddingRight: "var(--seed-box-padding-right)",
+
+      "&:after": {
+        content: "''",
+        position: "absolute",
+        inset: 0,
+      },
+
+      [pseudo(":before")]: {
+        content: "''",
+        position: "absolute",
+        inset: 0,
+        zIndex: -1,
+        transitionProperty: "background-color",
+        transitionDuration: vars.base.enabled.root.colorDuration,
+        transitionTimingFunction: vars.base.enabled.root.colorTimingFunction,
+      },
+      [pseudo(active, ":before")]: {
+        backgroundColor: vars.base.pressed.root.color,
+      },
     },
     title: {
       flexShrink: 0,

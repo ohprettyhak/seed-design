@@ -28,6 +28,14 @@
                 "paddingX": {
                   "type": "dimension",
                   "value": "$dimension.spacing-x.global-gutter"
+                },
+                "colorDuration": {
+                  "type": "duration",
+                  "value": "$duration.d3"
+                },
+                "colorTimingFunction": {
+                  "type": "cubicBezier",
+                  "value": "$timing-function.easing"
                 }
               },
               "content": {
