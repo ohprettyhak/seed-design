@@ -11,4 +11,4 @@ export {
   type ListPrefixProps as PrefixProps,
   type ListSuffixProps as SuffixProps,
   type ListTitleProps as TitleProps,
-} from "./list";
+} from "./List";

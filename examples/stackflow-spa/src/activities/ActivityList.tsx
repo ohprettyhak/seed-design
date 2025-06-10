@@ -3,14 +3,14 @@ import {
   IconILowercaseSerifCircleLine,
   IconPersonCircleLine,
 } from "@karrotmarket/react-monochrome-icon";
-import { Divider, Icon, List, VStack } from "@seed-design/react";
+import { Checkbox, Divider, Icon, List, VStack } from "@seed-design/react";
 import type { ActivityComponentType } from "@stackflow/react";
 import { AppBar, AppBarMain } from "../seed-design/stackflow/AppBar";
 import { AppScreen, AppScreenContent } from "../seed-design/stackflow/AppScreen";
-import { Avatar } from "../seed-design/ui/avatar";
-import { IdentityPlaceholder } from "../seed-design/ui/identity-placeholder";
 import { ActionButton } from "../seed-design/ui/action-button";
-
+import { Avatar } from "../seed-design/ui/avatar";
+import { Checkmark } from "../seed-design/ui/checkbox";
+import { IdentityPlaceholder } from "../seed-design/ui/identity-placeholder";
 const PrefixVariants = [
   null,
   <List.Prefix key="icon">
@@ -84,6 +84,17 @@ const ActivityList: ActivityComponentType = () => {
               )),
             ),
           )}
+          <List.Item asChild>
+            <Checkbox.Root.Primitive>
+              <List.Content>
+                <List.Title>타이틀</List.Title>
+              </List.Content>
+              <List.Suffix>
+                <Checkmark />
+                <Checkbox.HiddenInput />
+              </List.Suffix>
+            </Checkbox.Root.Primitive>
+          </List.Item>
         </VStack>
       </AppScreenContent>
     </AppScreen>

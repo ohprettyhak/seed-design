@@ -8,6 +8,7 @@ import badge from "./recipes/badge";
 import bottomSheet from "./recipes/bottom-sheet";
 import callout from "./recipes/callout";
 import checkbox from "./recipes/checkbox";
+import checkmark from "./recipes/checkmark";
 import chipTabs from "./recipes/chip-tabs";
 import contextualFloatingButton from "./recipes/contextual-floating-button";
 import controlChip from "./recipes/control-chip";
@@ -60,6 +61,7 @@ export const recipes = {
   radio,
   dialog,
   checkbox,
+  checkmark,
   actionChip,
   controlChip,
   callout,

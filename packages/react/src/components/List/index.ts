@@ -11,6 +11,6 @@ export {
   type ListPrefixProps,
   type ListSuffixProps,
   type ListTitleProps,
-} from "./list";
+} from "./List";
 
-export * as List from "./list.namespace";
+export * as List from "./List.namespace";

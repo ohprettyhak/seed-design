@@ -2,10 +2,18 @@ import type * as React from "react";
 
 import { listItem, type ListItemVariantProps } from "@seed-design/css/recipes/list-item";
 import { Primitive, type PrimitiveProps } from "@seed-design/react-primitive";
+import { forwardRef } from "react";
 import { createSlotRecipeContext } from "../../utils/createSlotRecipeContext";
 import { withStyleProps, type StyleProps } from "../../utils/styled";
+import { Box, type BoxProps } from "../Box";
 
 const { withContext, withProvider } = createSlotRecipeContext(listItem);
+
+export interface ListRootProps extends BoxProps {}
+
+export const ListRoot = forwardRef<HTMLDivElement, ListRootProps>((props, ref) => {
+  return <Box ref={ref} {...props} />;
+});
 
 export interface ListItemProps
   extends PrimitiveProps,

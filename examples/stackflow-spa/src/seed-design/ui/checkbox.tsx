@@ -20,13 +20,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ inputProps, rootRef, label, variant = "square", ...otherProps }, ref) => {
     return (
       <SeedCheckbox.Root ref={rootRef} variant={variant} {...otherProps}>
-        <SeedCheckbox.Control>
-          <SeedCheckbox.Indicator
-            unchecked={variant === "ghost" ? <IconCheckmarkFatFill /> : null}
-            checked={<IconCheckmarkFatFill />}
-            indeterminate={<IconMinusFatFill />}
-          />
-        </SeedCheckbox.Control>
+        <Checkmark variant={variant} />
         <SeedCheckbox.Label>{label}</SeedCheckbox.Label>
         <SeedCheckbox.HiddenInput ref={ref} {...inputProps} />
       </SeedCheckbox.Root>
