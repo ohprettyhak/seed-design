@@ -1,5 +1,11 @@
 # @seed-design/css
 
+## 0.0.41
+
+### Patch Changes
+
+- 561f74c: Text 컴포넌트에 `textDecorationLine` 옵션을 추가합니다.
+
 ## 0.0.39
 
 ### Patch Changes
